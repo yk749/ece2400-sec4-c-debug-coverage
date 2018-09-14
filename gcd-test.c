@@ -6,8 +6,9 @@ int gcd( int x, int y )
   while ( y != 0 ) {
     if ( x < y ) {
       int temp = x;
-      y = temp;
       x = y;
+      y = temp;
+
     }
     else {
       x = x - y;
@@ -21,8 +22,7 @@ int main()
   UTST_BEGIN();
 
   UTST_ASSERT_INT_EQ( gcd(0,5), 5 );
-
+  UTST_ASSERT_INT_EQ( gcd(5,1), 1 );
   UTST_END();
-  return 0;
 }
 
